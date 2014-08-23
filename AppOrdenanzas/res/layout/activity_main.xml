@@ -27,12 +27,20 @@
     </EditText>
 
     <ListView
-        android:id="@+id/listView1"
+        android:id="@+id/lv1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/et1"
         android:layout_below="@+id/et1"
         android:layout_marginTop="17dp" >
     </ListView>
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/et1"
+        android:layout_below="@+id/et1"
+        android:text="TextView" />
 
 </RelativeLayout>

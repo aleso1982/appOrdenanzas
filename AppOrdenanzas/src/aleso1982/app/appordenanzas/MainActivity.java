@@ -6,27 +6,39 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 
 public class MainActivity extends Activity implements TextWatcher{
 	
 	private Spinner spinner1;
 	private EditText et1;
-
+	private ListView lv1;
+	private TextView tv1;
+	
+	private String []opciones={"Articulo: 6.1", "Hecho: Comportarse de forma que se entorpece indebidamente la circulación", "Cuantia: 80 €", "Puntos: 0"};
+    	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
+        tv1 = (TextView) findViewById(R.id.tv1);
         et1 = (EditText) findViewById(R.id.et1);
-        
         spinner1 = (Spinner) findViewById(R.id.spinner1);
-        String []opciones={"Artículo", "Apartado", "Opción", "Caso", "Hecho", "Cuantía", "Puntos"};       
-        ArrayAdapter<String>adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, opciones);
-        spinner1.setAdapter(adapter);
+        lv1 = (ListView) findViewById(R.id.lv1);
+        
+        ArrayAdapter <String>adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, opciones);
+
+        lv1.setAdapter(adapter);
+                     
     }
 
     @Override
