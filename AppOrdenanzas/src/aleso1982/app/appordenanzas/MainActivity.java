@@ -24,7 +24,7 @@ public class MainActivity extends Activity implements TextWatcher{
         et1 = (EditText) findViewById(R.id.et1);
         
         spinner1 = (Spinner) findViewById(R.id.spinner1);
-        String []opciones={"Artículo", "Hecho", "Cuantía", "Puntos"};       
+        String []opciones={"Artículo", "Apartado", "Opción", "Caso", "Hecho", "Cuantía", "Puntos"};       
         ArrayAdapter<String>adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, opciones);
         spinner1.setAdapter(adapter);
     }
