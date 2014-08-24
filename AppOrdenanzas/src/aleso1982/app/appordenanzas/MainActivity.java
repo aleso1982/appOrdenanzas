@@ -6,12 +6,14 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 
 public class MainActivity extends Activity implements TextWatcher{
@@ -19,6 +21,8 @@ public class MainActivity extends Activity implements TextWatcher{
 	private Spinner spinner1;
 	private EditText et1;
 	private ListView lv1;
+	
+	ArrayList<Fila> fila = new ArrayList<Fila>();
     	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +44,6 @@ public class MainActivity extends Activity implements TextWatcher{
     }
     
     private ArrayList<Fila> obtenerItem(){
-    	ArrayList<Fila> fila = new ArrayList<Fila>();
     	
     	fila.add(new Fila("Articulo: 6.1", 
     					  "Hecho: Comportarse de forma que se entorpece indebidamente la circulación",
@@ -86,7 +89,10 @@ public class MainActivity extends Activity implements TextWatcher{
 
 	@Override
 	public void onTextChanged(CharSequence s, int start, int before, int count) {
-		// TODO Auto-generated method stub
+		String dato = spinner1.getSelectedItem().toString();
+//		for (int i = 0; i < fila.size(); i++) {
+//			fila.get(i).
+//		}
 		
 	}
 
