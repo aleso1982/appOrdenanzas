@@ -1,19 +1,17 @@
 package aleso1982.app.appordenanzas;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 
 public class MainActivity extends Activity implements TextWatcher{
@@ -21,24 +19,48 @@ public class MainActivity extends Activity implements TextWatcher{
 	private Spinner spinner1;
 	private EditText et1;
 	private ListView lv1;
-	private TextView tv1;
-	
-	private String []opciones={"Articulo: 6.1", "Hecho: Comportarse de forma que se entorpece indebidamente la circulación", "Cuantia: 80 €", "Puntos: 0"};
     	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        tv1 = (TextView) findViewById(R.id.tv1);
         et1 = (EditText) findViewById(R.id.et1);
         spinner1 = (Spinner) findViewById(R.id.spinner1);
         lv1 = (ListView) findViewById(R.id.lv1);
         
-        ArrayAdapter <String>adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, opciones);
+        String []opciones={"Articulo", "Hecho", "Cuantía", "Puntos"};       
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, opciones);
+        spinner1.setAdapter(arrayAdapter); 
+        
+        ArrayList<Fila> row = obtenerItem();
+        MiAdaptador adapter = new MiAdaptador(this, row);
 
-        lv1.setAdapter(adapter);
-                     
+        lv1.setAdapter(adapter);                     
+    }
+    
+    private ArrayList<Fila> obtenerItem(){
+    	ArrayList<Fila> fila = new ArrayList<Fila>();
+    	
+    	fila.add(new Fila("Articulo: 6.1", 
+    					  "Hecho: Comportarse de forma que se entorpece indebidamente la circulación",
+    					  "Cuantia: 80 €", 
+    					  "Puntos: 0")
+    	);
+    	
+    	fila.add(new Fila("Articulo: 6.2.1", 
+    					  "Hecho: Conducir de forma negligente",
+    					  "Cuantia:200 €",
+    					  "Puntos: 0")
+    	);
+    	
+    	fila.add(new Fila("Articulo: 6.2.2", 
+    					  "Hecho: Conducir de forma temeraria",
+    					  "Cuantia: 500 €",
+    					  "Puntos: 6")
+    	);
+				   
+    	return fila;
     }
 
     @Override

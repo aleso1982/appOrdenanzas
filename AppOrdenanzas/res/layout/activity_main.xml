@@ -17,7 +17,7 @@
 
     <EditText
         android:id="@+id/et1"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/spinner1"
@@ -31,16 +31,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/et1"
-        android:layout_below="@+id/et1"
-        android:layout_marginTop="17dp" >
+        android:layout_below="@+id/tvHecho" >
+
     </ListView>
 
     <TextView
-        android:id="@+id/tv1"
+        android:id="@+id/tvArticulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/et1"
+        android:layout_alignLeft="@+id/lv1"
         android:layout_below="@+id/et1"
-        android:text="TextView" />
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/tvHecho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lv1"
+        android:layout_below="@+id/tvArticulo" />
+    
+    <TextView
+        android:id="@+id/tvCuantia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lv1"
+        android:layout_below="@+id/tvHecho" />
+    
+    <TextView
+        android:id="@+id/tvPuntos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lv1"
+        android:layout_below="@+id/tvCuantia" />
 
 </RelativeLayout>
