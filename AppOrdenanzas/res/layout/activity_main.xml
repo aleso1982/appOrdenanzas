@@ -31,37 +31,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/et1"
-        android:layout_below="@+id/tvHecho" >
+        android:layout_below="@+id/et1" >
 
     </ListView>
-
-    <TextView
-        android:id="@+id/tvArticulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/lv1"
-        android:layout_below="@+id/et1"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/tvHecho"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/lv1"
-        android:layout_below="@+id/tvArticulo" />
-    
-    <TextView
-        android:id="@+id/tvCuantia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/lv1"
-        android:layout_below="@+id/tvHecho" />
-    
-    <TextView
-        android:id="@+id/tvPuntos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/lv1"
-        android:layout_below="@+id/tvCuantia" />
 
 </RelativeLayout>

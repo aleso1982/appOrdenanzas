@@ -45,7 +45,7 @@ public class MiAdaptador extends BaseAdapter {
 		
 		if (contentView == null) {
 			LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			vi = inflater.inflate(R.layout.activity_main, null);
+			vi = inflater.inflate(R.layout.fila, null);
 		}
 		
 		Fila row = fila.get(position);

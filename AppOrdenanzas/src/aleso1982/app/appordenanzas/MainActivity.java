@@ -89,10 +89,6 @@ public class MainActivity extends Activity implements TextWatcher{
 
 	@Override
 	public void onTextChanged(CharSequence s, int start, int before, int count) {
-		String dato = spinner1.getSelectedItem().toString();
-//		for (int i = 0; i < fila.size(); i++) {
-//			fila.get(i).
-//		}
 		
 	}
 
