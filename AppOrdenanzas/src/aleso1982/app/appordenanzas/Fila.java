@@ -17,32 +17,18 @@ public class Fila {
 		return articulo;
 	}
 
-	public void setArticulo(String articulo) {
-		this.articulo = articulo;
-	}
-
 	public String getHecho() {
 		return hecho;
 	}
 
-	public void setHecho(String hecho) {
-		this.hecho = hecho;
-	}
 
 	public String getCuantia() {
 		return cuantia;
 	}
 
-	public void setCuantia(String cuantia) {
-		this.cuantia = cuantia;
-	}
 
 	public String getPuntos() {
 		return puntos;
 	}
 
-	public void setPuntos(String puntos) {
-		this.puntos = puntos;
-	}
-	
 }

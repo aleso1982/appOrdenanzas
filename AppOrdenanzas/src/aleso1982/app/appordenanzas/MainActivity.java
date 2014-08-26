@@ -6,14 +6,12 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 
 public class MainActivity extends Activity implements TextWatcher{
@@ -22,6 +20,7 @@ public class MainActivity extends Activity implements TextWatcher{
 	private EditText et1;
 	private ListView lv1;
 	
+	ArrayList<Fila> filtro = new ArrayList<Fila>();
 	ArrayList<Fila> fila = new ArrayList<Fila>();
     	
     @Override
@@ -90,11 +89,41 @@ public class MainActivity extends Activity implements TextWatcher{
 	@Override
 	public void onTextChanged(CharSequence s, int start, int before, int count) {
 		
+		
+	}
+
+	private void getFilterRow(int i) {
+		filtro.add(new Fila(fila.get(i).getArticulo(), 
+							fila.get(i).getHecho(),
+							fila.get(i).getCuantia(),
+							fila.get(i).getPuntos())
+		);
 	}
 
 	@Override
 	public void afterTextChanged(Editable s) {
-		// TODO Auto-generated method stub
+		String spinnerSelect = spinner1.getSelectedItem().toString();
+		String buscar = et1.getText().toString();
+		filtro.clear();
+		
+		if (spinnerSelect.equals("Articulo")) {
+			for (int i = 0; i < fila.size(); i++) {
+				if (fila.get(i).getArticulo().contains(buscar)) {
+					getFilterRow(i);	
+				}
+			}
+		}
+		
+		if (spinnerSelect.equals("Hecho")) {
+			for (int i = 0; i < fila.size(); i++) {
+				if (fila.get(i).getHecho().contains(buscar)) {
+					getFilterRow(i);
+				}				
+			}
+		}
+		
+		MiAdaptador adaptadorFiltrado = new MiAdaptador(MainActivity.this, filtro);
+        lv1.setAdapter(adaptadorFiltrado);
 		
 	}
 }
