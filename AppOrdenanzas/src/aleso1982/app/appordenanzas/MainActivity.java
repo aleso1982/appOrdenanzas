@@ -22,6 +22,8 @@ public class MainActivity extends Activity implements TextWatcher{
 	
 	ArrayList<Fila> filtro = new ArrayList<Fila>();
 	ArrayList<Fila> fila = new ArrayList<Fila>();
+	
+	MiAdaptador adapter;
     	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,7 @@ public class MainActivity extends Activity implements TextWatcher{
         setContentView(R.layout.activity_main);
         
         et1 = (EditText) findViewById(R.id.et1);
+        et1.addTextChangedListener(this);
         spinner1 = (Spinner) findViewById(R.id.spinner1);
         lv1 = (ListView) findViewById(R.id.lv1);
         
@@ -37,7 +40,8 @@ public class MainActivity extends Activity implements TextWatcher{
         spinner1.setAdapter(arrayAdapter); 
         
         ArrayList<Fila> row = obtenerItem();
-        MiAdaptador adapter = new MiAdaptador(this, row);
+        filtro = obtenerItem();
+        adapter = new MiAdaptador(this, row);
 
         lv1.setAdapter(adapter);                     
     }
@@ -103,7 +107,7 @@ public class MainActivity extends Activity implements TextWatcher{
 	@Override
 	public void afterTextChanged(Editable s) {
 		String spinnerSelect = spinner1.getSelectedItem().toString();
-		String buscar = et1.getText().toString();
+		String buscar = s.toString();
 		filtro.clear();
 		
 		if (spinnerSelect.equals("Articulo")) {
@@ -122,8 +126,6 @@ public class MainActivity extends Activity implements TextWatcher{
 			}
 		}
 		
-		MiAdaptador adaptadorFiltrado = new MiAdaptador(MainActivity.this, filtro);
-        lv1.setAdapter(adaptadorFiltrado);
-		
+		adapter.notifyDataSetChanged();		
 	}
 }

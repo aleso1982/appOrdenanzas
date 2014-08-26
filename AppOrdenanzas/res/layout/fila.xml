@@ -17,11 +17,13 @@
     <TextView
         android:id="@+id/tvCuantia"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_toRightOf = "@id/tvHecho" />
 
     <TextView
         android:id="@+id/tvPuntos"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_toRightOf = "@id/tvCuantia" />
 
 </LinearLayout>
