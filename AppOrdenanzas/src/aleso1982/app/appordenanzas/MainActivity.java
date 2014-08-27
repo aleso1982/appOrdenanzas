@@ -2,6 +2,8 @@ package aleso1982.app.appordenanzas;
 
 import java.util.ArrayList;
 
+import org.json.JSONObject;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -20,6 +22,9 @@ public class MainActivity extends Activity implements TextWatcher{
 	private EditText et1;
 	private ListView lv1;
 	
+	private JSONObject cadena = new JSONObject();
+	
+	
 	ArrayList<Fila> filtro = new ArrayList<Fila>();
 	ArrayList<Fila> fila = new ArrayList<Fila>();
 	
@@ -32,6 +37,7 @@ public class MainActivity extends Activity implements TextWatcher{
         
         et1 = (EditText) findViewById(R.id.et1);
         et1.addTextChangedListener(this);
+        
         spinner1 = (Spinner) findViewById(R.id.spinner1);
         lv1 = (ListView) findViewById(R.id.lv1);
         
@@ -40,32 +46,37 @@ public class MainActivity extends Activity implements TextWatcher{
         spinner1.setAdapter(arrayAdapter); 
         
         ArrayList<Fila> row = obtenerItem();
-        filtro = obtenerItem();
-        adapter = new MiAdaptador(this, row);
-
-        lv1.setAdapter(adapter);                     
+        filtro.addAll(row);
+        adapter = new MiAdaptador(this, filtro);
+        lv1.setAdapter(adapter);                
+        
     }
     
     private ArrayList<Fila> obtenerItem(){
     	
     	fila.add(new Fila("Articulo: 6.1", 
-    					  "Hecho: Comportarse de forma que se entorpece indebidamente la circulación",
-    					  "Cuantia: 80 €", 
+    					  "Comportarse de forma que se entorpece indebidamente la circulación",
+    					  "80 €", 
     					  "Puntos: 0")
     	);
     	
     	fila.add(new Fila("Articulo: 6.2.1", 
-    					  "Hecho: Conducir de forma negligente",
-    					  "Cuantia:200 €",
+    					  "Conducir de forma negligente",
+    					  "200 €",
     					  "Puntos: 0")
     	);
     	
     	fila.add(new Fila("Articulo: 6.2.2", 
-    					  "Hecho: Conducir de forma temeraria",
-    					  "Cuantia: 500 €",
+    					  "Conducir de forma temeraria",
+    					  "500 €",
     					  "Puntos: 6")
     	);
-				   
+    	
+    	fila.add(new Fila ("Articulo: 8.1.1", 
+    					   "Conducir un vehículo sin estar en todo momento en condiciones de controlarlo", 
+    					   "80 €", "Puntos: 0")
+    	);
+    	
     	return fila;
     }
 
@@ -96,14 +107,6 @@ public class MainActivity extends Activity implements TextWatcher{
 		
 	}
 
-	private void getFilterRow(int i) {
-		filtro.add(new Fila(fila.get(i).getArticulo(), 
-							fila.get(i).getHecho(),
-							fila.get(i).getCuantia(),
-							fila.get(i).getPuntos())
-		);
-	}
-
 	@Override
 	public void afterTextChanged(Editable s) {
 		String spinnerSelect = spinner1.getSelectedItem().toString();
@@ -126,6 +129,31 @@ public class MainActivity extends Activity implements TextWatcher{
 			}
 		}
 		
+		if (spinnerSelect.equals("Cuantía")) {
+			for (int i = 0; i < fila.size(); i++) {
+				if (fila.get(i).getCuantia().contains(buscar)) {
+					getFilterRow(i);
+				}				
+			}
+		}
+		
+		if (spinnerSelect.equals("Puntos")) {
+			for (int i = 0; i < fila.size(); i++) {
+				if (fila.get(i).getPuntos().contains(buscar)) {
+					getFilterRow(i);
+				}				
+			}
+		}
+		
 		adapter.notifyDataSetChanged();		
 	}
+	
+	private void getFilterRow(int i) {
+		filtro.add(new Fila(fila.get(i).getArticulo(), 
+							fila.get(i).getHecho(),
+							fila.get(i).getCuantia(),
+							fila.get(i).getPuntos())
+		);
+	}
+	
 }

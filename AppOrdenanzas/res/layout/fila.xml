@@ -1,29 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:background="#73B5F7" >
 
     <TextView
         android:id="@+id/tvArticulo"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text="ARTICULO"
+        android:background="#F0F00F" />
 
     <TextView
         android:id="@+id/tvHecho"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tvArticulo"
+        android:textAlignment="center"
+        android:text="HECHO" />
 
     <TextView
         android:id="@+id/tvCuantia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf = "@id/tvHecho" />
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tvHecho"
+        android:text="CUANTIA"
+        android:background="#F00F25" />
 
     <TextView
         android:id="@+id/tvPuntos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf = "@id/tvCuantia" />
+        android:layout_alignBaseline="@+id/tvCuantia"
+        android:layout_alignBottom="@+id/tvCuantia"
+        android:layout_centerHorizontal="true"
+        android:text="PUNTOS"
+        android:background="#F00F25" />
 
-</LinearLayout>
+</RelativeLayout>
