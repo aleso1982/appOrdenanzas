@@ -1,8 +1,9 @@
 package aleso1982.app.appordenanzas;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 
-import org.json.JSONObject;
+import org.json.JSONArray;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -22,8 +23,8 @@ public class MainActivity extends Activity implements TextWatcher{
 	private EditText et1;
 	private ListView lv1;
 	
-	private JSONObject cadena = new JSONObject();
-	
+	InputStream is = getResources().openRawResource(R.raw.omc);
+	JSONArray jsonArray = new JSONArray(is);
 	
 	ArrayList<Fila> filtro = new ArrayList<Fila>();
 	ArrayList<Fila> fila = new ArrayList<Fila>();
