@@ -1,0 +1,18 @@
+{"omc":
+	[
+		{
+			"art":
+				{"Articulo":"6.1", "Hecho":"Comportarse de forma que se entorpece indebidamente la circulación", "Cuantia":"80", "Puntos":"0"}
+		},
+		
+		{
+			"art":
+				{"Articulo":"6.2.1", "Hecho":"Conducir de forma negligente", "Cuantia":200, "Puntos":0}
+		},
+		
+		{
+			"art":
+				{"Articulo":"6.2.2", "Hecho":"Conducir de forma temeraria", "Cuantia":500, "Puntos":6}
+		}
+	]
+}
