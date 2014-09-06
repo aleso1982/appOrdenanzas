@@ -26,14 +26,15 @@ public final class R {
         public static final int omc=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f090007;
-        public static final int et1=0x7f090002;
-        public static final int lv1=0x7f090001;
-        public static final int spinner1=0x7f090000;
-        public static final int tvArticulo=0x7f090003;
-        public static final int tvCuantia=0x7f090006;
-        public static final int tvHecho=0x7f090004;
-        public static final int tvPuntos=0x7f090005;
+        public static final int action_settings=0x7f090008;
+        public static final int button1=0x7f090000;
+        public static final int et1=0x7f090007;
+        public static final int lv1=0x7f090006;
+        public static final int spinner1=0x7f090005;
+        public static final int tvArticulo=0x7f090001;
+        public static final int tvCuantia=0x7f090004;
+        public static final int tvHecho=0x7f090002;
+        public static final int tvPuntos=0x7f090003;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
