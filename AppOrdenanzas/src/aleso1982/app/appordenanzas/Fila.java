@@ -21,11 +21,9 @@ public class Fila {
 		return hecho;
 	}
 
-
 	public String getCuantia() {
 		return cuantia;
 	}
-
 
 	public String getPuntos() {
 		return puntos;

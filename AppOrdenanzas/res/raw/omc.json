@@ -1,18 +1,42 @@
-{"omc":
+﻿{"omc":
 	[
-		{
-			"art":
-				{"Articulo":"6.1", "Hecho":"Comportarse de forma que se entorpece indebidamente la circulaci�n", "Cuantia":"80", "Puntos":"0"}
-		},
-		
-		{
-			"art":
-				{"Articulo":"6.2.1", "Hecho":"Conducir de forma negligente", "Cuantia":200, "Puntos":0}
-		},
-		
-		{
-			"art":
-				{"Articulo":"6.2.2", "Hecho":"Conducir de forma temeraria", "Cuantia":500, "Puntos":6}
-		}
+		{"Articulo":"6.1", "Hecho":"Comportarse de forma que se entorpece indebidamente la circulación", "Cuantia":80, "Puntos":0},
+		{"Articulo":"6.2.1", "Hecho":"Conducir de forma negligente", "Cuantia":200, "Puntos":0},
+		{"Articulo":"6.2.2", "Hecho":"Conducir de forma temeraria", "Cuantia":500, "Puntos":6},
+		{"Articulo":"8.1.1", "Hecho":"Conducir un vehículo sin estar en todo momento en condiciones de controlarlo", "Cuantia":80, "Puntos":0},
+		{"Articulo":"8.1.2", "Hecho":"Conducir un animal sin estar en todo momento en condiciones de controlarlo", "Cuantia":80, "Puntos":0},
+		{"Articulo":"8.2.1.1", "Hecho":"Conducir un vehículo sin mantener la propia libertad de movimientos", "Cuantia":80, "Puntos":0},
+		{"Articulo":"8.2.1.2", "Hecho":"Conducir un vehículo sin mantener el campo necesario de visión", "Cuantia":80, "Puntos":0},
+		{"Articulo":"8.2.1.3", "Hecho":"Conducir un vehículo sin mantener la atención permanente a la conducción", "Cuantia":80, "Puntos":0},
+		{"Articulo":"8.2.1.4", "Hecho":"Conducir un vehículo sin mantener la posición adecuada", "Cuantia":80, "Puntos":0},
+		{"Articulo":"8.2.1.5", "Hecho":"Conducir un vehículo sin cuidar de que el resto de pasajeros mantengan la posición adecuada", "Cuantia":80, "Puntos":0},
+		{"Articulo":"8.2.1.6", "Hecho":"Conducir un vehículo sin cuidar de la adecuada colocación de los objetos transportados, para que no interfieran la conducción", "Cuantia":80, "Puntos":0},
+		{"Articulo":"8.2.1.7", "Hecho":"Conducir un vehículo sin cuidar de la adecuada colocación de algún animal transportado, para que no interfiera la conducción", "Cuantia":80, "Puntos":0},
+		{"Articulo":"8.3.1.1", "Hecho":"Conducir usando cascos, auriculares u otros dispositivos que disminuyen la obligatoria atención permanente a la conducción", "Cuantia":200, "Puntos":3},
+		{"Articulo":"8.3.1.2", "Hecho":"Conducir utilizando manualmente dispositivos de telefonía móvil, navegadores o cualquier otro sistema de comunicación", "Cuantia":200, "Puntos":3},
+		{"Articulo":"8.5", "Hecho":"Circular en ciclomotor o motocicleta llevando un menor de entre 7 y 12 años sin ser el conductor padre, madre, tutor o persona autorizada", "Cuantia":200, "Puntos":0},
+		{"Articulo":"8.6.1", "Hecho":"Conducir un vehículo que tenga instalado inhibidor de radar o cualquier otro tipo de mecanismo encaminado a interferir en el correcto funcionamiento de los sistemas de vigilancia de tráfico", "Cuantia":6000, "Puntos":6},
+		{"Articulo":"8.6.2", "Hecho":"Hacer o emitir señales a otros conductores con la finalidad de eludir la vigilancia de los agentes de tráfico", "Cuantia":80, "Puntos":0},
+		{"Articulo":"9.1.a.1", "Hecho":"Conducir un vehículo con una tasa de alcohol en aire espirado entre 0,25 y 0,50 miligramos por litro", "Cuantia":500, "Puntos":4},
+		{"Articulo":"9.1.a.2", "Hecho":"Conducir un vehículo con una tasa de alcohol en aire espirado superior a 0,50 miligramos por litro", "Cuantia":500, "Puntos":6},
+		{"Articulo":"9.1.b", "Hecho":"Conducir con una tasa de alcohol en aire espirado superior a 0,15 miligramos por litro, sin sobrepasar los 0,30 miligramos", "Cuantia":500, "Puntos":4},
+		{"Articulo":"9.1.c", "Hecho":"Conducir un vehículo con una tasa de alcohol en aire espirado superior a 0,30 miligramos por litro", "Cuantia":500, "Puntos":6},
+		{"Articulo":"9.2", "Hecho":"Negarse a someterse a las pruebas de detección del grado de impregnación de alcoholemia", "Cuantia":500, "Puntos":6},
+		{"Articulo":"10.1", "Hecho":"Conducir bajo los efectos de estupefacientes, psicotrópicos, estimulantes y otras sustancias análogas", "Cuantia":500, "Puntos":6},
+		{"Articulo":"10.3", "Hecho":"Negarse a someterse a las pruebas de detección de estupefacientes, psicotrópicos, estimulantes y otras sustancias de efectos análogos", "Cuantia":500, "Puntos":6},
+		{"Articulo":"11.1", "Hecho":"Circular un vehículo emitiendo perturbaciones electromagnéticas, ruidos, gases y otros contaminantes", "Cuantia":80, "Puntos":0},
+		{"Articulo":"11.2", "Hecho":"Circular un vehículo con escape libre", "Cuantia":80, "Puntos":0},
+		{"Articulo":"12.1", "Hecho":"Conducir un vehículo cuya superficie acristalada no permite a su conductor la visibilidad diáfana de la vía por la colocación de láminas, adhesivos, cortinillas u otros elementos no autorizados", "Cuantia":80, "Puntos":0},
+		{"Articulo":13.1.1, "Hecho":"Realizar obras en la vía pública sin autorización", "Cuantia":3000, "Puntos":0},
+		{"Articulo":13.1.2, "Hecho":"No instalar la señalización de obras, poniendo en grave riesgo la seguridad vial", "Cuantia":3000, "Puntos":0},
+		{"Articulo":13.1.3, "Hecho":"Instalar la señalización de obras incorrectamente, poniendo en grave riesgo la seguridad vial", "Cuantia":3000, "Puntos":0},
+		{"Articulo":13.2.1, "Hecho":"Arrojar, depositar o abandonar sobre la vía objetos o materias que puedan entorpecer la libre circulación", "Cuantia":200, "Puntos":4},
+		{"Articulo":13.2.2, "Hecho":"Arrojar, depositar o abandonar sobre la vía objetos o materias que puedan entorpecer la parada o estacionamiento", "Cuantia":80, "Puntos":0},
+		{"Articulo":13.2.3, "Hecho":"Crear obstáculo o peligro en la vía sin tomar las medidas necesarias para hacerlo desaparecer lo antes posible", "Cuantia":80, "Puntos":0},
+		{"Articulo":13.2.4, "Hecho":"No señalizar de forma eficaz un obstáculo o peligro en la vía por quien lo ha creado", "Cuantia":80, "Puntos":0},
+		{"Articulo":13.3.1.1, "Hecho":"Arrojar a la vía o en sus inmediaciones un objeto que pueda producir un incendio", "Cuantia":200, "Puntos":4},
+		{"Articulo":13.3.1.2, "Hecho":"Arrojar a la vía o en sus inmediaciones un objeto que pueda poner en peligro la seguridad vial", "Cuantia":200, "Puntos":4},
+		{"Articulo":13.4, "Hecho":"Lavar vehículos o realizar reparaciones que impliquen suciedad en la vía pública", "Cuantia":80, "Puntos":0},
+		{"Articulo":13.5, "Hecho":"Desplazar contenedores de basura, para cambiar su ubicación o para estacionar vehículos", "Cuantia":80, "Puntos":0}
 	]
 }

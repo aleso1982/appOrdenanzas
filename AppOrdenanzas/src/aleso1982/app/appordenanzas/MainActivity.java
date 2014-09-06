@@ -26,10 +26,6 @@ public class MainActivity extends Activity implements TextWatcher {
 	private EditText et1;
 	private ListView lv1;
 
-	// InputStream is = getResources().openRawResource(R.raw.omc);
-	// BufferedReader reader = new BufferedReader(is);
-	// //JSONArray jsonArray = new JSONArray(is);
-
 	ArrayList<Fila> filtro = new ArrayList<Fila>();
 	ArrayList<Fila> fila = new ArrayList<Fila>();
 
@@ -45,78 +41,35 @@ public class MainActivity extends Activity implements TextWatcher {
 
 		spinner1 = (Spinner) findViewById(R.id.spinner1);
 		lv1 = (ListView) findViewById(R.id.lv1);
+		
+		getSpinnerOptions();
 
-		String[] opciones = { "Articulo", "Hecho", "Cuantía", "Puntos" };
+		ArrayList<Fila> row = leerArticulos(obtenerJson());
+		filtro.addAll(row);
+		adapter = new MiAdaptador(this, filtro);
+		lv1.setAdapter(adapter);
+	}
+
+	private void getSpinnerOptions() {
+		String[] opciones = { "Articulo", "Hecho", "CuantÃ­a", "Puntos" };
 		ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,
 				android.R.layout.simple_spinner_item, opciones);
 		spinner1.setAdapter(arrayAdapter);
-
-		// Obtiene y almacena los articulos el el arrayList fila
-		leerArticulos(obtenerJson());
-
-		//ArrayList<Fila> row = obtenerItem();
-		filtro.addAll(fila);
-		adapter = new MiAdaptador(this, filtro);
-		lv1.setAdapter(adapter);
-
 	}
-
-
-	public void leerArticulos(JSONObject json) {
-		String articulo = ""; // Almacena el articulo
-		String hecho = ""; // Almacena el hecho
-		String cuantia = ""; // Almacena la cuantia
-		String puntos = ""; // Almacena los puntos
-
-		JSONArray arrayArticulos; // Almacena los articulos
-		JSONObject objeto; // Almacena un objeto
-		JSONObject objetoFila; // Almacena el objeto Fila
-
-		try {
-
-			// Inicialización de campos
-			objeto = new JSONObject();
-			objetoFila = new JSONObject();
-
-			// Almacena las filas
-			arrayArticulos = new JSONArray(json.getJSONArray("omc").toString());
-
-			// Recorre las ciudades
-			for (int i = 0; i < arrayArticulos.length(); i++) {
-
-				// Obtine la fila del articulo
-				objeto = arrayArticulos.getJSONObject(i);
-				objetoFila = objeto.getJSONObject("art");
-
-				// Almacena los datos del articulo
-				articulo = objetoFila.getString("Articulo"); // Almacena el articulo
-				hecho = objetoFila.getString("Hecho"); // Almacena el hecho
-				cuantia = objetoFila.getString("cuantia"); // Almacena la cuantia
-				puntos = objeto.getString("Puntos"); // Almacena los puntos
-
-				// Almacena la ciudad obtenida
-				fila.add(new Fila(articulo, hecho, cuantia, puntos));
-			}
-
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-	}
-
+	
 	public JSONObject obtenerJson() {
 		JSONObject json = null; // Almacena el objeto JSON
 		StringBuilder stringBuilder; // Almacena el contenido del fichero JSON
-		String linea; // Almacena la línea leida del fichero JSON
+		String linea; // Almacena la lÃ­nea leida del fichero JSON
 
 		try {
-			// Inicialización de campos
+			// InicializaciÃ³n de campos
 			stringBuilder = new StringBuilder();
 			linea = null;
-
+			
 			// Obtiene el fichero JSON
-			InputStream fichero = getResources().openRawResource(R.raw.omc);
+			InputStream fichero = 
+					getResources().openRawResource(R.raw.omc);
 
 			// Prepara el fichero para su lectura
 			BufferedReader bfreader = new BufferedReader(new InputStreamReader(
@@ -124,7 +77,7 @@ public class MainActivity extends Activity implements TextWatcher {
 
 			// Lee el fichero JSON
 			while ((linea = bfreader.readLine()) != null) {
-				// Añade el contenido líena a línea
+				// AÃ±ade el contenido lÃ­ena a lÃ­nea
 				stringBuilder.append(linea + "\n");
 			}
 
@@ -133,30 +86,41 @@ public class MainActivity extends Activity implements TextWatcher {
 			// Crea el objeto JSON
 			json = new JSONObject(stringBuilder.toString());
 		} catch (Exception ex) {
-
 		}
-
 		return json;
 	}
 
-	private ArrayList<Fila> obtenerItem() {
+	public ArrayList<Fila> leerArticulos(JSONObject json) {
+		String articulo, hecho, cuantia, puntos;
 
-		fila.add(new Fila(
-				"Articulo: 6.1",
-				"Comportarse de forma que se entorpece indebidamente la circulación",
-				"80 €", "Puntos: 0"));
+		JSONArray arrayArticulos; // Almacena los articulos
+		JSONObject objeto; // Almacena un objeto
 
-		fila.add(new Fila("Articulo: 6.2.1", "Conducir de forma negligente",
-				"200 €", "Puntos: 0"));
+		try {
+			objeto = new JSONObject();
+			// Almacena las filas
+			arrayArticulos = new JSONArray(json.getJSONArray("omc").toString());
 
-		fila.add(new Fila("Articulo: 6.2.2", "Conducir de forma temeraria",
-				"500 €", "Puntos: 6"));
+			// Recorre los articulos
+			for (int i = 0; i < arrayArticulos.length(); i++) {
+				// Obtine la fila del articulo
+				objeto = arrayArticulos.getJSONObject(i);
+				//objetoFila = objeto.getJSONObject("art");
 
-		fila.add(new Fila(
-				"Articulo: 8.1.1",
-				"Conducir un vehículo sin estar en todo momento en condiciones de controlarlo",
-				"80 €", "Puntos: 0"));
+				// Almacena los datos del articulo
+				articulo = objeto.getString("Articulo");
+				hecho = objeto.getString("Hecho");
+				cuantia = objeto.getString("Cuantia");
+				puntos = objeto.getString("Puntos");
 
+				// Almacena el articulo obtenido
+				fila.add(new Fila("Art: " + articulo, hecho, "CuantÃ­a: " + cuantia + "â‚¬", "Puntos: " + puntos));
+			}
+
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return fila;
 	}
 
@@ -189,7 +153,7 @@ public class MainActivity extends Activity implements TextWatcher {
 	@Override
 	public void afterTextChanged(Editable s) {
 		String spinnerSelect = spinner1.getSelectedItem().toString();
-		String buscar = s.toString();
+		String buscar = s.toString().toLowerCase();
 		filtro.clear();
 
 		if (spinnerSelect.equals("Articulo")) {
@@ -202,13 +166,13 @@ public class MainActivity extends Activity implements TextWatcher {
 
 		if (spinnerSelect.equals("Hecho")) {
 			for (int i = 0; i < fila.size(); i++) {
-				if (fila.get(i).getHecho().contains(buscar)) {
+				if (fila.get(i).getHecho().toLowerCase().contains(buscar)) {
 					getFilterRow(i);
 				}
 			}
 		}
 
-		if (spinnerSelect.equals("Cuantía")) {
+		if (spinnerSelect.equals("CuantÃ­a")) {
 			for (int i = 0; i < fila.size(); i++) {
 				if (fila.get(i).getCuantia().contains(buscar)) {
 					getFilterRow(i);

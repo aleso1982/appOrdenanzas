@@ -9,8 +9,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:background="#020000"
+        android:textColor="#FFFFFF"
         android:text="ARTICULO"
-        android:background="#F0F00F" />
+        android:typeface="serif" />
 
     <TextView
         android:id="@+id/tvHecho"
@@ -19,25 +21,29 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/tvArticulo"
         android:textAlignment="center"
-        android:text="HECHO" />
-
-    <TextView
-        android:id="@+id/tvCuantia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/tvHecho"
-        android:text="CUANTIA"
-        android:background="#F00F25" />
+        android:text="HECHO" 
+        android:typeface="serif" />
 
     <TextView
         android:id="@+id/tvPuntos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/tvCuantia"
-        android:layout_alignBottom="@+id/tvCuantia"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="#020000"
+        android:textColor="#FFFFFF"
         android:text="PUNTOS"
-        android:background="#F00F25" />
+        android:typeface="serif" />
+
+    <TextView
+        android:id="@+id/tvCuantia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#020000"
+        android:textColor="#FFFFFF"
+        android:text="CUANTIA"
+        android:typeface="serif" />
 
 </RelativeLayout>
